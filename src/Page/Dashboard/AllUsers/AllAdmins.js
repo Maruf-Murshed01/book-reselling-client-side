@@ -6,7 +6,7 @@ const AllAdmins = () => {
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users/admins')
+            const res = await fetch('https://book-resale-server-omega.vercel.app/users/admins')
             const data = await res.json();
             return data;
         }

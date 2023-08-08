@@ -22,7 +22,6 @@ const SingleBook = ({ book, setModalId }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 

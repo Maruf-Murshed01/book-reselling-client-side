@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import img from '../../../Assets/Login/login.svg';
+import img from '../../../Assets/Login/login.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
@@ -21,6 +21,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
+                navigate('/')
 
                 //   setAuthToken(user)
             })
@@ -31,7 +32,7 @@ const Login = () => {
         <div className="hero w-full my-20">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <img className='w-3/4' src={img} alt="" />
+                    <img className='w-100%' src={img} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
                     <h1 className="text-5xl text-center font-bold">Login</h1>
@@ -52,7 +53,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary " type="submit" value="Login" />
+                            <input className="btn btn-primary bg-[#149777] border-none" type="submit" value="Login" />
                         </div>
                     </form>
                     <p className='text-center'>New to Genius Car <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>

@@ -20,7 +20,7 @@ const BookingModal = ({ modalId }) => {
         _id } = allbookstoSingle
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allbooks/${modalId}`)
+        fetch(`https://book-resale-server-omega.vercel.app/allbooks/${modalId}`)
         .then(res => res.json())
         .then(data => setAllBookstoSingle(data))
     }, [modalId])
@@ -46,7 +46,7 @@ const BookingModal = ({ modalId }) => {
         }
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://book-resale-server-omega.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

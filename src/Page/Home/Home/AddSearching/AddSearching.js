@@ -7,7 +7,7 @@ const AddSearching = () => {
     const [search, setSearch] = useState('')
     const searchRef = useRef()
     useEffect(() => {
-        fetch(`http://localhost:5000/services?search=${search}`)
+        fetch(`https://book-resale-server-omega.vercel.app/services?search=${search}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [search])

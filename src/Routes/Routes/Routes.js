@@ -16,6 +16,8 @@ import NotFound404 from "../../Page/Shared/NotFound404/NotFound404"
 import AdminRoute from "../AdminRoute/AdminRoute"
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import SellerRoute from "../SellerRoute/SellerRoute"
+import MyProduct from "../../Page/Dashboard/SellersArena/MyProduct"
+import Blogs from "../../Page/Home/Home/Blogs/Blogs"
 
 export const router = createBrowserRouter([
     {
@@ -35,9 +37,13 @@ export const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             },
             {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+            },
+            {
                 path: '/categories/:id',
                 element: <PrivateRoute><Categories></Categories></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://book-resale-server-omega.vercel.app/categories/${params.id}`)
             },
             {
                 path: '*',
@@ -80,9 +86,13 @@ export const router = createBrowserRouter([
                 element: <SellerRoute><AllAdmins></AllAdmins></SellerRoute>
             },
             {
+                path: '/dashboard/myproducts',
+                element: <SellerRoute><MyProduct></MyProduct></SellerRoute>
+            },
+            {
                 path: '/dashboard/payment/:id',
                 element: <AdminRoute><Payment></Payment></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/orders/${params.id}`)
+                loader: ({params}) => fetch(`https://book-resale-server-omega.vercel.app/orders/${params.id}`)
             },
             {
                 path: '*',

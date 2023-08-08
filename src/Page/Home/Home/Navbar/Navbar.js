@@ -16,16 +16,14 @@ const Navbar = () => {
             <>
                 <li><Link className='text-[gray]' to=''>Hi, {user?.displayName}</Link></li>
                 <li><Link className='text-[gray]' to='/'>Home</Link></li>
-                <li><Link className='text-[gray]' to=''>About</Link></li>
-                <li><Link className='text-[gray]' to=''>Contact</Link></li>
+                <li><Link className='text-[gray]' to='blogs'>FAQ</Link></li>
                 <li><Link className='text-[gray]' to='/dashboard'>Dashboard</Link></li>
                 <li><button className='text-[gray]' onClick={handleLogOut}>Sign Out</button></li>
             </>
             :
             <>
                 <li><Link className='text-[gray]' to='/'>Home</Link></li>
-                <li><Link className='text-[gray]' to=''>About</Link></li>
-                <li><Link className='text-[gray]' to='/'>Contact</Link></li>
+                <li><Link className='text-[gray]' to='/blogs'>FAQ</Link></li>
                 <li><Link className='text-[gray]' to='/login'>Login</Link></li>
             </>
         }

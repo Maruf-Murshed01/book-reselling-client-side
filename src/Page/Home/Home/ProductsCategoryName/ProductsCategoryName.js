@@ -6,7 +6,7 @@ const ProductsCategoryName = () => {
    const [pcn, setPcn] = useState([])
 
    useEffect(()=>{
-    fetch('http://localhost:5000/categories')
+    fetch('https://book-resale-server-omega.vercel.app/categories')
     .then(res => res.json())
     .then(data => setPcn(data))
    }, [])

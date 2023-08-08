@@ -1,16 +1,32 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 const AllUsers = () => {
-    const { data: users = [] } = useQuery({
+
+    const { data: users = [], refetch, isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users')
+            const res = await fetch('https://book-resale-server-omega.vercel.app/users')
             const data = await res.json();
             return data;
         }
     })
+
+    const handleDeleteUser = user => {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+            method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.deletedCount > 0){
+                refetch();
+                toast.success(` ${user.name} deleted successfully`)
+            }
+        })
+    }
+
     return (
         <div>
             <h2 className="text-3xl py-6 ">All Users List</h2>
@@ -33,7 +49,7 @@ const AllUsers = () => {
                                 <td>{user.name}n</td>
                                 <td>{user.email}</td>
                                 <td>{user.userType}</td>
-                                <td><button className='btn btn-xs btn-danger'>Delete</button></td>
+                                <td><button onClick={() => handleDeleteUser(user) } className='btn btn-xs btn-danger'>Delete</button></td>
                             </tr>)
                         }
 
