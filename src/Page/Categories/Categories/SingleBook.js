@@ -6,7 +6,7 @@ const SingleBook = ({ book, setModalId }) => {
 
     return (
         <div className='py-6'>
-            <div className="card card-side bg-base-100 shadow-xl w-1/2 m-auto">
+            <div className="card card-side bg-base-100 shadow-xl w-full sm:w-full flex flex-col md:w-full flex flex-col lg:w-1/2 m-auto">
                 <figure><img src={img} alt="Movie" style={{ width: "300px", height: "auto", padding: "5px" }} /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Book Name: {name}</h2>
