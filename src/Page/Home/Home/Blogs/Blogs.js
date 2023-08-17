@@ -40,6 +40,7 @@ const Blogs = () => {
                 </div>
                 <div className="collapse-content">
                     <p>To ensure book available for all</p>
+                    <p>Thank you for read this</p>
                 </div>
             </div>
         </div>
