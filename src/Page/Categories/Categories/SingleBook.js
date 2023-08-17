@@ -15,7 +15,6 @@ const SingleBook = ({ book, setModalId }) => {
                     <p>Original Price: {original_price}</p>
                     <p>Used For: {used}</p>
                     <p>Posting Date: {post_date}</p>
-                    <span>h</span>
                     <p>Seller Name: {seller_name}</p>
                     <div className="card-actions w-full">
                         <label htmlFor="resale-bookig-modal" className="btn"  onClick={() => setModalId(_id)}>Book Now</label>
